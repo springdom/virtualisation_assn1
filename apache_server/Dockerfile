@@ -5,7 +5,7 @@ ENV REFRESHED_AT 2015-10-08
 RUN apt-get -yqq update
 RUN apt-get -yqq install apache2
 
-VOLUME ["/var/www/html"]
+VOLUME [""/var/www/html]
 WORKDIR /var/www/html
 
 ENV APACHE_RUN_USER www-data
@@ -20,4 +20,4 @@ RUN mkdir -p $APACHE_RUN_DIR $APACHE_LOCK_DIR $APACHE_LOG_DIR
 EXPOSE 80
 
 ENTRYPOINT ["/usr/sbin/apache2"]
-CMD ["-D,"FOREGROUND"]
+CMD ["-D","FOREGROUND"]
